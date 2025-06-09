@@ -232,8 +232,8 @@ async def handle_discover_command(args):
 
     print(tabulate(rows, headers=headers, tablefmt="grid"))
     print()
-    print("💡 Use 'philips-airctrl device-info -H <IP>' to get detailed information")
-    print("💡 Use 'philips-airctrl setup' for interactive Home Assistant setup")
+    print("💡 Use 'philips-airctrl device-info -H <IP>' to extract technical device data")
+    print("💡 Use 'philips-airctrl setup' to collect device info for developers")
 
 
 async def handle_device_info_command(args, client):
