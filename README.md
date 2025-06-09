@@ -13,18 +13,6 @@ An enhanced async Python library and command-line utilities for controlling Phil
 
 **✅ FOR USERS**: Contribute device information to help developers expand device support
 
-**❌ NOT A HOME ASSISTANT INTEGRATION**: This tool does not directly integrate with Home Assistant or generate ready-to-use configurations
-
-**❌ NOT AN END-USER SOLUTION**: This tool is for data collection and contribution, not for daily Home Assistant use
-
-## ⚠️ **Important: Enhanced Fork Notice**
-
-> **This is NOT the original aioairctrl package!** This is an enhanced fork specifically designed for device discovery and developer support.
->
-> - **❌ DO NOT install from PyPI** (`pip install aioairctrl`) - you'll get the original version without device discovery features
-> - **✅ MUST install from source** (see installation instructions below) to get device discovery and data extraction tools
-> - **🔧 Designed for developers and users** who want to help expand Home Assistant support for new air purifier models
-
 ## Features
 
 - **🔍 Automatic Device Discovery** - Find Philips air purifiers on your network automatically
