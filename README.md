@@ -5,23 +5,34 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Integration%20Ready-blue.svg)](https://www.home-assistant.io/)
 
-An enhanced async Python library and command-line utilities for controlling Philips air purifiers using encrypted CoAP (Constrained Application Protocol). This fork adds comprehensive **Home Assistant integration support**, **automatic device discovery**, and **user-friendly setup tools**.
+An enhanced async Python library and command-line utilities for controlling Philips air purifiers using encrypted CoAP (Constrained Application Protocol). This fork adds comprehensive **device discovery**, **technical data extraction**, and **developer tools** to help expand Home Assistant integration support for new air purifier models.
+
+## 🎯 **What This Tool Does**
+
+**✅ FOR DEVELOPERS**: Extract comprehensive technical data from Philips air purifiers to help add support for new models in Home Assistant integrations
+
+**✅ FOR USERS**: Contribute device information to help developers expand device support
+
+**❌ NOT A HOME ASSISTANT INTEGRATION**: This tool does not directly integrate with Home Assistant or generate ready-to-use configurations
+
+**❌ NOT AN END-USER SOLUTION**: This tool is for data collection and contribution, not for daily Home Assistant use
 
 ## ⚠️ **Important: Enhanced Fork Notice**
 
-> **This is NOT the original aioairctrl package!** This is an enhanced fork specifically designed for Home Assistant integration.
+> **This is NOT the original aioairctrl package!** This is an enhanced fork specifically designed for device discovery and developer support.
 >
-> - **❌ DO NOT install from PyPI** (`pip install aioairctrl`) - you'll get the original version without Home Assistant features
-> - **✅ MUST install from source** (see installation instructions below) to get device discovery, setup wizard, and HA integration
-> - **🏠 Designed for Home Assistant users** who need comprehensive device information and easy integration setup
+> - **❌ DO NOT install from PyPI** (`pip install aioairctrl`) - you'll get the original version without device discovery features
+> - **✅ MUST install from source** (see installation instructions below) to get device discovery and data extraction tools
+> - **🔧 Designed for developers and users** who want to help expand Home Assistant support for new air purifier models
 
 ## Features
 
 - **🔍 Automatic Device Discovery** - Find Philips air purifiers on your network automatically
-- **🏠 Home Assistant Integration** - Ready-to-use configurations for Home Assistant
 - **📊 Comprehensive Device Analysis** - Extract 70+ data points with capability detection
-- **🧙‍♂️ Interactive Setup Wizard** - User-friendly guided setup for non-technical users
-- **📁 Multiple Export Formats** - JSON and YAML output for easy integration
+- **🔧 Developer Data Collection** - Generate standardized device information for integration developers
+- **🧙‍♂️ Interactive Setup Wizard** - User-friendly guided device information collection
+- **📁 Multiple Export Formats** - JSON and YAML output for developer use
+- **🤝 Community Contribution** - Easy device info sharing for Home Assistant integration projects
 - **⚡ Async/await support** - Built with modern Python async patterns
 - **🔐 Encrypted communication** - Secure CoAP communication with AES encryption
 - **🖥️ Command-line interface** - Easy-to-use CLI for quick operations
@@ -37,12 +48,12 @@ This library has been tested with:
 
 ## Installation
 
-> **⚠️ Important**: This enhanced version with Home Assistant integration features is **only available from source**. The original `aioairctrl` package on PyPI does not include device discovery, setup wizard, or Home Assistant integration capabilities.
+> **⚠️ Important**: This enhanced version with device discovery and data extraction features is **only available from source**. The original `aioairctrl` package on PyPI does not include device discovery or comprehensive device analysis capabilities.
 
 ### Install from Source (Required)
 
 ```bash
-# Clone the enhanced Home Assistant fork
+# Clone the enhanced device discovery fork
 git clone https://github.com/domalab/philips-airctrl.git
 cd philips-airctrl
 
@@ -55,14 +66,14 @@ pip install -e ".[dev]"
 
 ### Verify Installation
 
-After installation, verify you have the enhanced version with Home Assistant features:
+After installation, verify you have the enhanced version with device discovery features:
 
 ```bash
 # This command should be available (not in original package)
 philips-airctrl discover --help
 
-# Check for Home Assistant integration features
-philips-airctrl setup --help
+# Check for device information extraction features
+philips-airctrl device-info --help
 ```
 
 ### Package Comparison
@@ -71,7 +82,7 @@ philips-airctrl setup --help
 |---------|---------------------------|-------------------|
 | Basic device control | ✅ | ✅ |
 | Device discovery | ❌ | ✅ |
-| Home Assistant integration | ❌ | ✅ |
+| Device data extraction | ❌ | ✅ |
 | Interactive setup wizard | ❌ | ✅ |
 | JSON/YAML export | ❌ | ✅ |
 | Comprehensive device analysis | ❌ | ✅ |
@@ -119,11 +130,11 @@ philips-airctrl discover -t 10.0
 +----------------+-----------+---------+------------+---------------+
 ```
 
-### 🏠 Home Assistant Integration
+### 🔧 Device Data Collection for Developers
 
-#### Interactive Setup Wizard (Recommended)
+#### Interactive Device Information Collection (Recommended)
 
-For non-technical users, use the interactive setup wizard:
+Use the interactive wizard to collect comprehensive device information:
 
 ```bash
 philips-airctrl setup
@@ -131,23 +142,23 @@ philips-airctrl setup
 
 This will:
 1. 🔍 Discover devices on your network
-2. 📊 Analyze device capabilities
-3. 📁 Generate Home Assistant configuration files
-4. 📋 Provide step-by-step integration instructions
+2. 📊 Analyze device capabilities and extract technical specifications
+3. 📁 Generate standardized JSON/YAML reports for developers
+4. 📋 Provide instructions for sharing data with integration developers
 
 #### Manual Device Analysis
 
-Get comprehensive device information for Home Assistant integration:
+Extract comprehensive device information for integration development:
 
 ```bash
-# Get device info as JSON
+# Get device info as JSON for developers
 philips-airctrl device-info -H 192.168.1.100 --format json
 
-# Export as YAML for Home Assistant
+# Export as YAML for easier reading
 philips-airctrl device-info -H 192.168.1.100 --format yaml
 
-# Save to file
-philips-airctrl device-info -H 192.168.1.100 -o my_device.json
+# Save to file for sharing with developers
+philips-airctrl device-info -H 192.168.1.100 -o my_device_info.json
 ```
 
 ### 🎛️ Device Control
@@ -203,11 +214,11 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## 🏠 Home Assistant Integration
+## 🔧 Developer Resources
 
-### Device Information Export
+### Device Information Export for Integration Development
 
-The `device-info` command provides comprehensive device analysis perfect for Home Assistant integration development:
+The `device-info` command extracts comprehensive technical data that developers need to add support for new air purifier models in Home Assistant integrations:
 
 ```bash
 philips-airctrl device-info -H 192.168.1.100 --format json
@@ -251,57 +262,58 @@ philips-airctrl device-info -H 192.168.1.100 --format json
 }
 ```
 
-### Contributing Device Information
+### How to Help Expand Device Support
 
-Help expand Home Assistant support by contributing your device information:
+**🎯 Purpose**: Help developers add support for your air purifier model in existing Home Assistant integrations
+
+**👥 Target Audience**: Users who want to contribute device data to help developers
+
+#### Step-by-Step Process:
 
 1. **Discover your device:**
    ```bash
    philips-airctrl discover
    ```
 
-2. **Run the setup wizard:**
+2. **Extract device information:**
    ```bash
    philips-airctrl setup
    ```
+   This generates a comprehensive technical report about your device.
 
-3. **Share your device data:**
-   - Visit: https://github.com/domalab/ha-philips-airpurifier
+3. **Share your device data with developers:**
+   - **For Philips Air Purifier Integration**: Visit https://github.com/domalab/ha-philips-airpurifier
+   - **For other integrations**: Check the integration's GitHub repository
    - Create a new issue titled "Device Support: [Your Model]"
    - Attach the generated JSON file from the setup wizard
-   - Include any additional model-specific information
+   - Include your device model number and any unique features
 
-4. **Help test the integration:**
-   - Install the Home Assistant integration
-   - Test with your device using the generated configuration
-   - Report any issues or missing features
+4. **What happens next:**
+   - Developers use your data to understand your device's capabilities
+   - They add support for your model to the integration
+   - You can test the updated integration once it's released
 
-### Generated Home Assistant Configuration
+### Important Note About Configuration
 
-The tool automatically generates ready-to-use Home Assistant configurations:
+**⚠️ This tool does NOT generate ready-to-use Home Assistant configurations!**
 
-```yaml
-air_purifier:
-  platform: philips_airpurifier
-  host: 192.168.1.100
-  name: "Living Room Air Purifier"
-  model: "AC4220/12"
-  unique_id: "philips_ac4220_livingroom"
-  device_info:
-    identifiers: ["96868ce0a7cb11ef9fbda30d1cde3e50"]
-    manufacturer: "Philips"
-    model: "AC4220/12"
-    sw_version: "0.2.1"
-  supported_features:
-    - fan_speed
-    - power
-    - humidity_target
-  sensors:
-    - name: "PM2.5"
-      key: "D03224"
-      unit: "μg/m³"
-      device_class: "pm25"
-```
+The JSON/YAML output contains technical device information that **developers** use to add support for your device model in existing Home Assistant integrations.
+
+**What this tool provides:**
+- Device capability analysis
+- Sensor and control mapping
+- Technical specifications
+- Raw device data
+
+**What you need to do:**
+1. Share the generated data with integration developers
+2. Wait for developers to add support for your model
+3. Install/update the Home Assistant integration once support is added
+4. Configure the integration through Home Assistant's UI
+
+**For actual Home Assistant setup**, refer to the documentation of existing integrations like:
+- [Philips Air Purifier Integration](https://github.com/domalab/ha-philips-airpurifier)
+- [Home Assistant Core Philips Integration](https://www.home-assistant.io/integrations/philips_js/)
 
 ## API Reference
 
@@ -346,7 +358,7 @@ yaml_output = extractor.export_yaml(device_info)
 
 #### SetupWizard
 
-Interactive setup for Home Assistant integration:
+Interactive device information collection for developers:
 
 ```python
 from philips_airctrl.setup_wizard import SetupWizard
@@ -370,9 +382,9 @@ philips-airctrl device-info -H HOST [OPTIONS]
   -f, --format FORMAT      Output format: json, yaml (default: json)
   -o, --output FILE        Output file (default: stdout)
 
-# Interactive Setup
+# Interactive Device Data Collection
 philips-airctrl setup
-  # No additional options - fully interactive
+  # No additional options - fully interactive device information collection
 
 # Device Control
 philips-airctrl status -H HOST [OPTIONS]
@@ -416,8 +428,8 @@ Scanning networks: 192.168.1.0/24, 192.168.20.0/24
 | 192.168.20.151 | AC4220/12 | Bedroom     | 0.2.1      | -52 dBm       |
 +----------------+-----------+-------------+------------+---------------+
 
-💡 Use 'philips-airctrl device-info -H <IP>' to get detailed information
-💡 Use 'philips-airctrl setup' for interactive Home Assistant setup
+💡 Use 'philips-airctrl device-info -H <IP>' to extract technical device data
+💡 Use 'philips-airctrl setup' to collect device info for developers
 ```
 
 ### Device Information JSON Export
@@ -455,39 +467,40 @@ Key sections of the JSON output:
 }
 ```
 
-### Home Assistant YAML Configuration
+### Device Technical Data in YAML Format
 
 ```bash
 $ philips-airctrl device-info -H 192.168.1.100 --format yaml
 ```
 
-Generated configuration ready for Home Assistant:
+**⚠️ Note**: This is technical data for developers, NOT a ready-to-use Home Assistant configuration!
+
+Sample technical data structure:
 
 ```yaml
-home_assistant:
-  platform: philips_airpurifier
-  host: 192.168.1.100
-  name: Living Room Air Purifier
-  model: AC4220/12
-  unique_id: philips_ac4220_livingroom
-  supported_features:
-    - fan_speed
-    - power
-    - humidity_target
-    - display_brightness
-  sensors:
-    - name: PM2.5
-      key: D03224
-      unit: μg/m³
-      device_class: pm25
-    - name: Humidity
-      key: D03110
-      unit: '%'
-      device_class: humidity
-    - name: Filter Life
-      key: D03130
-      unit: '%'
-      device_class: battery
+device:
+  model_number: "AC4220/12"
+  firmware_version: "0.2.1"
+  serial_number: "688001001527"
+
+capabilities:
+  has_humidifier: true
+  has_purifier: true
+  has_pm25_sensor: true
+  filter_types: ["main_filter", "hepa_filter"]
+
+sensors:
+  pm25_value:
+    key: "D03224"
+    unit: "μg/m³"
+    device_class: "pm25"
+  humidity_sensor:
+    key: "D03110"
+    unit: "%"
+    device_class: "humidity"
+
+# This data helps developers understand your device's capabilities
+# and add support to existing Home Assistant integrations
 ```
 
 ## Development
