@@ -1,6 +1,6 @@
 import asyncio
 
-from aioairctrl import CoAPClient
+from philips_airctrl import CoAPClient
 
 
 async def main():

@@ -2,7 +2,7 @@
 import json
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch, PropertyMock
-from aioairctrl.coap.client import Client
+from philips_airctrl.coap.client import Client
 
 
 class TestClient:

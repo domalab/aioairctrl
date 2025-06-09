@@ -9,7 +9,7 @@ import netifaces
 from aiocoap import Context, Message, NON
 from aiocoap.numbers.codes import GET
 
-from aioairctrl.coap.client import Client
+from philips_airctrl.coap.client import Client
 
 logger = logging.getLogger(__name__)
 

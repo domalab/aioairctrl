@@ -2,7 +2,7 @@
 import json
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
-from aioairctrl.cli import parse_args, async_main
+from philips_airctrl.cli import parse_args, async_main
 
 
 class TestCLI:
@@ -72,8 +72,8 @@ class TestCLI:
         mock_client = AsyncMock()
         mock_client.get_status.return_value = ({"power": True}, 60)
         
-        with patch('aioairctrl.cli.parse_args') as mock_parse_args, \
-             patch('aioairctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create, \
+        with patch('philips_airctrl.cli.parse_args') as mock_parse_args, \
+             patch('philips_airctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create, \
              patch('builtins.print') as mock_print:
             
             mock_args = MagicMock()
@@ -101,8 +101,8 @@ class TestCLI:
         mock_client = AsyncMock()
         mock_client.get_status.return_value = ({"power": True}, 60)
         
-        with patch('aioairctrl.cli.parse_args') as mock_parse_args, \
-             patch('aioairctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create, \
+        with patch('philips_airctrl.cli.parse_args') as mock_parse_args, \
+             patch('philips_airctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create, \
              patch('builtins.print') as mock_print:
             
             mock_args = MagicMock()
@@ -128,8 +128,8 @@ class TestCLI:
         mock_client = AsyncMock()
         mock_client.set_control_values.return_value = True
         
-        with patch('aioairctrl.cli.parse_args') as mock_parse_args, \
-             patch('aioairctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
+        with patch('philips_airctrl.cli.parse_args') as mock_parse_args, \
+             patch('philips_airctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
             
             mock_args = MagicMock()
             mock_args.host = "192.168.1.100"
@@ -154,8 +154,8 @@ class TestCLI:
         mock_client = AsyncMock()
         mock_client.set_control_values.return_value = True
         
-        with patch('aioairctrl.cli.parse_args') as mock_parse_args, \
-             patch('aioairctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
+        with patch('philips_airctrl.cli.parse_args') as mock_parse_args, \
+             patch('philips_airctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
             
             mock_args = MagicMock()
             mock_args.host = "192.168.1.100"
@@ -180,8 +180,8 @@ class TestCLI:
         mock_client = AsyncMock()
         mock_client.set_control_values.return_value = True
         
-        with patch('aioairctrl.cli.parse_args') as mock_parse_args, \
-             patch('aioairctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
+        with patch('philips_airctrl.cli.parse_args') as mock_parse_args, \
+             patch('philips_airctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
             
             mock_args = MagicMock()
             mock_args.host = "192.168.1.100"
@@ -206,8 +206,8 @@ class TestCLI:
         mock_client = AsyncMock()
         mock_client.get_status.side_effect = KeyboardInterrupt()
         
-        with patch('aioairctrl.cli.parse_args') as mock_parse_args, \
-             patch('aioairctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
+        with patch('philips_airctrl.cli.parse_args') as mock_parse_args, \
+             patch('philips_airctrl.cli.CoAPClient.create', return_value=mock_client) as mock_create:
             
             mock_args = MagicMock()
             mock_args.host = "192.168.1.100"

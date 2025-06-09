@@ -1,1 +1,1 @@
-# Test package for aioairctrl
+# Test package for philips-airctrl

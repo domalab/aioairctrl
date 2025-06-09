@@ -1,4 +1,4 @@
-# aioairctrl-ha
+# philips-airctrl
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -43,8 +43,8 @@ This library has been tested with:
 
 ```bash
 # Clone the enhanced Home Assistant fork
-git clone https://github.com/domalab/aioairctrl.git
-cd aioairctrl
+git clone https://github.com/domalab/philips-airctrl.git
+cd philips-airctrl
 
 # Install with all dependencies
 pip install -e .
@@ -59,10 +59,10 @@ After installation, verify you have the enhanced version with Home Assistant fea
 
 ```bash
 # This command should be available (not in original package)
-aioairctrl discover --help
+philips-airctrl discover --help
 
 # Check for Home Assistant integration features
-aioairctrl setup --help
+philips-airctrl setup --help
 ```
 
 ### Package Comparison
@@ -78,7 +78,7 @@ aioairctrl setup --help
 
 ### Future PyPI Release
 
-This enhanced version may be published to PyPI in the future under a different name (e.g., `aioairctrl-ha` or `aioairctrl-enhanced`) to avoid conflicts with the original package.
+This enhanced version may be published to PyPI in the future under a different name (e.g., `philips-airctrl-ha` or `philips-airctrl-enhanced`) to avoid conflicts with the original package.
 
 ### Dependencies
 
@@ -97,13 +97,13 @@ Find all Philips air purifiers on your network:
 
 ```bash
 # Discover all devices automatically
-aioairctrl discover
+philips-airctrl discover
 
 # Scan specific network
-aioairctrl discover -n 192.168.1.0/24
+philips-airctrl discover -n 192.168.1.0/24
 
 # Custom timeout
-aioairctrl discover -t 10.0
+philips-airctrl discover -t 10.0
 ```
 
 **Example Output:**
@@ -126,7 +126,7 @@ aioairctrl discover -t 10.0
 For non-technical users, use the interactive setup wizard:
 
 ```bash
-aioairctrl setup
+philips-airctrl setup
 ```
 
 This will:
@@ -141,13 +141,13 @@ Get comprehensive device information for Home Assistant integration:
 
 ```bash
 # Get device info as JSON
-aioairctrl device-info -H 192.168.1.100 --format json
+philips-airctrl device-info -H 192.168.1.100 --format json
 
 # Export as YAML for Home Assistant
-aioairctrl device-info -H 192.168.1.100 --format yaml
+philips-airctrl device-info -H 192.168.1.100 --format yaml
 
 # Save to file
-aioairctrl device-info -H 192.168.1.100 -o my_device.json
+philips-airctrl device-info -H 192.168.1.100 -o my_device.json
 ```
 
 ### 🎛️ Device Control
@@ -156,23 +156,23 @@ Basic device control commands:
 
 ```bash
 # Get device status
-aioairctrl status -H 192.168.1.100
+philips-airctrl status -H 192.168.1.100
 
 # Get status in JSON format
-aioairctrl status -H 192.168.1.100 --json
+philips-airctrl status -H 192.168.1.100 --json
 
 # Set device parameters
-aioairctrl set -H 192.168.1.100 power=true mode=auto
+philips-airctrl set -H 192.168.1.100 power=true mode=auto
 
 # Monitor device status in real-time
-aioairctrl status-observe -H 192.168.1.100
+philips-airctrl status-observe -H 192.168.1.100
 ```
 
 ### Library Usage
 
 ```python
 import asyncio
-from aioairctrl import CoAPClient
+from philips_airctrl import CoAPClient
 
 async def main():
     # Connect to your air purifier
@@ -210,7 +210,7 @@ if __name__ == "__main__":
 The `device-info` command provides comprehensive device analysis perfect for Home Assistant integration development:
 
 ```bash
-aioairctrl device-info -H 192.168.1.100 --format json
+philips-airctrl device-info -H 192.168.1.100 --format json
 ```
 
 **Sample Output Structure:**
@@ -257,12 +257,12 @@ Help expand Home Assistant support by contributing your device information:
 
 1. **Discover your device:**
    ```bash
-   aioairctrl discover
+   philips-airctrl discover
    ```
 
 2. **Run the setup wizard:**
    ```bash
-   aioairctrl setup
+   philips-airctrl setup
    ```
 
 3. **Share your device data:**
@@ -325,7 +325,7 @@ The main client class for interacting with Philips air purifiers.
 Network discovery for Philips air purifiers:
 
 ```python
-from aioairctrl.discovery import DeviceDiscovery
+from philips_airctrl.discovery import DeviceDiscovery
 
 discovery = DeviceDiscovery(timeout=5.0)
 devices = await discovery.discover_devices()
@@ -336,7 +336,7 @@ devices = await discovery.discover_devices()
 Comprehensive device analysis:
 
 ```python
-from aioairctrl.device_info import DeviceInfoExtractor
+from philips_airctrl.device_info import DeviceInfoExtractor
 
 extractor = DeviceInfoExtractor("192.168.1.100")
 device_info = await extractor.get_device_info()
@@ -349,7 +349,7 @@ yaml_output = extractor.export_yaml(device_info)
 Interactive setup for Home Assistant integration:
 
 ```python
-from aioairctrl.setup_wizard import SetupWizard
+from philips_airctrl.setup_wizard import SetupWizard
 
 wizard = SetupWizard()
 await wizard.run()
@@ -359,33 +359,33 @@ await wizard.run()
 
 ```bash
 # Device Discovery
-aioairctrl discover [OPTIONS]
+philips-airctrl discover [OPTIONS]
   -n, --network NETWORK    Specific network to scan (e.g., 192.168.1.0/24)
   -t, --timeout TIMEOUT    Discovery timeout in seconds (default: 5.0)
 
 # Device Information
-aioairctrl device-info -H HOST [OPTIONS]
+philips-airctrl device-info -H HOST [OPTIONS]
   -H, --host HOST          Address of CoAP device (required)
   -P, --port PORT          Port of CoAP device (default: 5683)
   -f, --format FORMAT      Output format: json, yaml (default: json)
   -o, --output FILE        Output file (default: stdout)
 
 # Interactive Setup
-aioairctrl setup
+philips-airctrl setup
   # No additional options - fully interactive
 
 # Device Control
-aioairctrl status -H HOST [OPTIONS]
+philips-airctrl status -H HOST [OPTIONS]
   -H, --host HOST          Address of CoAP device (required)
   -P, --port PORT          Port of CoAP device (default: 5683)
   -J, --json               Output as JSON
 
-aioairctrl status-observe -H HOST [OPTIONS]
+philips-airctrl status-observe -H HOST [OPTIONS]
   -H, --host HOST          Address of CoAP device (required)
   -P, --port PORT          Port of CoAP device (default: 5683)
   -J, --json               Output as JSON
 
-aioairctrl set -H HOST [OPTIONS] K=V [K=V ...]
+philips-airctrl set -H HOST [OPTIONS] K=V [K=V ...]
   -H, --host HOST          Address of CoAP device (required)
   -P, --port PORT          Port of CoAP device (default: 5683)
   -I, --int                Treat values as integers
@@ -399,7 +399,7 @@ aioairctrl set -H HOST [OPTIONS] K=V [K=V ...]
 ### Device Discovery Output
 
 ```bash
-$ aioairctrl discover
+$ philips-airctrl discover
 ```
 
 ```
@@ -416,14 +416,14 @@ Scanning networks: 192.168.1.0/24, 192.168.20.0/24
 | 192.168.20.151 | AC4220/12 | Bedroom     | 0.2.1      | -52 dBm       |
 +----------------+-----------+-------------+------------+---------------+
 
-💡 Use 'aioairctrl device-info -H <IP>' to get detailed information
-💡 Use 'aioairctrl setup' for interactive Home Assistant setup
+💡 Use 'philips-airctrl device-info -H <IP>' to get detailed information
+💡 Use 'philips-airctrl setup' for interactive Home Assistant setup
 ```
 
 ### Device Information JSON Export
 
 ```bash
-$ aioairctrl device-info -H 192.168.1.100 --format json
+$ philips-airctrl device-info -H 192.168.1.100 --format json
 ```
 
 Key sections of the JSON output:
@@ -458,7 +458,7 @@ Key sections of the JSON output:
 ### Home Assistant YAML Configuration
 
 ```bash
-$ aioairctrl device-info -H 192.168.1.100 --format yaml
+$ philips-airctrl device-info -H 192.168.1.100 --format yaml
 ```
 
 Generated configuration ready for Home Assistant:
@@ -495,8 +495,8 @@ home_assistant:
 ### Setting up Development Environment
 
 ```bash
-git clone https://github.com/domalab/aioairctrl.git
-cd aioairctrl
+git clone https://github.com/domalab/philips-airctrl.git
+cd philips-airctrl
 
 # Install development dependencies
 pip install -e ".[dev]"
@@ -512,7 +512,7 @@ pre-commit install
 pytest
 
 # Run with coverage
-pytest --cov=aioairctrl
+pytest --cov=philips_airctrl
 
 # Run specific test file
 pytest tests/test_client.py
@@ -529,13 +529,13 @@ This project uses several tools to maintain code quality:
 
 ```bash
 # Format code
-black aioairctrl tests
+black philips_airctrl tests
 
 # Check linting
-flake8 aioairctrl
+flake8 philips_airctrl
 
 # Type checking
-mypy aioairctrl
+mypy philips_airctrl
 
 # Run all quality checks
 pre-commit run --all-files
@@ -557,8 +557,8 @@ This library communicates with Philips air purifiers using the CoAP (Constrained
 1. **No devices found during discovery**:
    - Ensure your air purifier is connected to the same network
    - Check that the device is powered on and connected to WiFi
-   - Try specifying a specific network: `aioairctrl discover -n 192.168.1.0/24`
-   - Increase timeout: `aioairctrl discover -t 10.0`
+   - Try specifying a specific network: `philips-airctrl discover -n 192.168.1.0/24`
+   - Increase timeout: `philips-airctrl discover -t 10.0`
 
 2. **Connection refused**:
    - Verify the IP address is correct
@@ -585,13 +585,13 @@ Enable debug logging to see detailed protocol communication:
 
 ```bash
 # For device control
-aioairctrl status -H 192.168.1.100 -D
+philips-airctrl status -H 192.168.1.100 -D
 
 # For discovery (verbose network scanning)
-aioairctrl discover -D
+philips-airctrl discover -D
 
 # For device analysis
-aioairctrl device-info -H 192.168.1.100 -D
+philips-airctrl device-info -H 192.168.1.100 -D
 ```
 
 ### Network Requirements

@@ -1,6 +1,6 @@
 """Tests for the encryption module."""
 import pytest
-from aioairctrl.coap.encryption import EncryptionContext, DigestMismatchException
+from philips_airctrl.coap.encryption import EncryptionContext, DigestMismatchException
 
 
 class TestEncryptionContext:

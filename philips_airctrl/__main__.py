@@ -1,4 +1,4 @@
-from aioairctrl.cli import main
+from philips_airctrl.cli import main
 
 if __name__ == "__main__":
     main()

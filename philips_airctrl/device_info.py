@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 
 import yaml
 
-from aioairctrl.coap.client import Client
+from philips_airctrl.coap.client import Client
 
 logger = logging.getLogger(__name__)
 

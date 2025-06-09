@@ -43,7 +43,7 @@ repos:
     rev: 1.7.5
     hooks:
       - id: bandit
-        args: [-r, aioairctrl]
+        args: [-r, philips_airctrl]
         exclude: tests/
 
   - repo: https://github.com/pycqa/pydocstyle

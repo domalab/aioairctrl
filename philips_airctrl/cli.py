@@ -6,10 +6,10 @@ import sys
 
 from tabulate import tabulate
 
-from aioairctrl import CoAPClient
-from aioairctrl.device_info import DeviceInfoExtractor
-from aioairctrl.discovery import DeviceDiscovery
-from aioairctrl.setup_wizard import SetupWizard
+from philips_airctrl import CoAPClient
+from philips_airctrl.device_info import DeviceInfoExtractor
+from philips_airctrl.discovery import DeviceDiscovery
+from philips_airctrl.setup_wizard import SetupWizard
 
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__package__)
@@ -232,8 +232,8 @@ async def handle_discover_command(args):
 
     print(tabulate(rows, headers=headers, tablefmt="grid"))
     print()
-    print("💡 Use 'aioairctrl device-info -H <IP>' to get detailed information")
-    print("💡 Use 'aioairctrl setup' for interactive Home Assistant setup")
+    print("💡 Use 'philips-airctrl device-info -H <IP>' to get detailed information")
+    print("💡 Use 'philips-airctrl setup' for interactive Home Assistant setup")
 
 
 async def handle_device_info_command(args, client):

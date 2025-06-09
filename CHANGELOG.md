@@ -1,4 +1,4 @@
-# Changelog - aioairctrl-ha (Enhanced Home Assistant Fork)
+# Changelog - philips-airctrl (Enhanced Home Assistant Fork)
 
 All notable changes to this enhanced fork will be documented in this file.
 
@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code quality tools (Black, Flake8, MyPy)
 
 ### Changed - **🔄 Fork & Package Changes**
-- **BREAKING**: Package renamed to `aioairctrl-ha` to distinguish from original
+- **BREAKING**: Package renamed to `philips-airctrl` to distinguish from original
 - **BREAKING**: No longer available on PyPI - must install from source
 - **BREAKING**: CLI argument structure updated for new commands
 - **BREAKING**: Migrated from setup.py to pyproject.toml
@@ -83,7 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Version 0.2.6 Improvements Summary
 
-This release represents a major modernization and quality improvement of the aioairctrl library:
+This release represents a major modernization and quality improvement of the philips-airctrl library:
 
 1. **Testing Infrastructure**: Added comprehensive test suite covering encryption, client functionality, and CLI operations with proper async mocking.
 
